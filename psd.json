@@ -1,0 +1,231 @@
+{
+  "children": [
+    {
+      "type": "group",
+      "visible": true,
+      "opacity": 1,
+      "blendingMode": "passthru",
+      "name": "texts",
+      "left": 37,
+      "right": 494,
+      "top": 40,
+      "bottom": 471,
+      "height": 431,
+      "width": 457,
+      "children": [
+        {
+          "type": "layer",
+          "visible": true,
+          "opacity": 1,
+          "blendingMode": "normal",
+          "name": "Welcome",
+          "left": 37,
+          "right": 472,
+          "top": 40,
+          "bottom": 165,
+          "height": 125,
+          "width": 435,
+          "mask": {},
+          "text": {
+            "value": "Welcome to Photopea",
+            "font": {
+              "name": "﻿LiberationSans-Bold\u0000",
+              "sizes": [42, 42],
+              "colors": [
+                [0, 0, 0, 255],
+                [0, 0, 0, 255]
+              ],
+              "alignment": ["center"]
+            },
+            "left": -1017448224,
+            "top": -1035363942,
+            "right": 1130035424,
+            "bottom": 0,
+            "transform": {
+              "xx": 0.9768115389520019,
+              "xy": 0.21410095135291024,
+              "yx": -0.21410095135291027,
+              "yy": 0.9768115389520023,
+              "tx": 252.73621934210445,
+              "ty": 117.96986418654765
+            }
+          },
+          "image": {}
+        },
+        {
+          "type": "layer",
+          "visible": true,
+          "opacity": 1,
+          "blendingMode": "normal",
+          "name": "Description",
+          "left": 256,
+          "right": 494,
+          "top": 183,
+          "bottom": 301,
+          "height": 118,
+          "width": 238,
+          "mask": {},
+          "text": {
+            "value": "Photopea gives you\r- advanced image editing tools\r- support for popular formats\r       - PSD (Adobe Photoshop)\u0003       - XCF (GNU Gimp)\u0003       - JPG, PNG, GIF, BMP, WebP\r- familiar UI (Adobe Photoshop)\u0003\r",
+            "font": {
+              "name": "﻿LiberationSans-Bold\u0000",
+              "sizes": [14],
+              "colors": [[0, 0, 0, 255]],
+              "alignment": [
+                "left",
+                "left",
+                "left",
+                "left",
+                "left",
+                "left",
+                "left",
+                "left",
+                "center"
+              ]
+            },
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "transform": {
+              "xx": 1.0000000000000007,
+              "xy": 0,
+              "yx": 0,
+              "yy": 0.9999999999999996,
+              "tx": 255.3515299999999,
+              "ty": 184
+            }
+          },
+          "image": {}
+        },
+        {
+          "type": "layer",
+          "visible": true,
+          "opacity": 1,
+          "blendingMode": "normal",
+          "name": "Blog & Twitter",
+          "left": 131,
+          "right": 406,
+          "top": 409,
+          "bottom": 471,
+          "height": 62,
+          "width": 275,
+          "mask": {},
+          "text": {
+            "value": "Blog: blog.photopea.com\rTwitter: @photopeacom",
+            "font": {
+              "name": "﻿LiberationSans-Bold\u0000",
+              "sizes": [23],
+              "colors": [[0, 0, 0, 255]],
+              "alignment": ["center", "center"]
+            },
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "transform": {
+              "xx": 1.0000000000000009,
+              "xy": 0,
+              "yx": 0,
+              "yy": 0.9999999999999994,
+              "tx": 24,
+              "ty": 409.3385909904442
+            }
+          },
+          "image": {}
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "visible": true,
+      "opacity": 1,
+      "blendingMode": "passthru",
+      "name": "pea",
+      "left": 68,
+      "right": 229,
+      "top": 334,
+      "bottom": 376,
+      "height": 42,
+      "width": 161,
+      "children": [
+        {
+          "type": "layer",
+          "visible": true,
+          "opacity": 1,
+          "blendingMode": "normal",
+          "name": "pea",
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0,
+          "height": 0,
+          "width": 0,
+          "mask": {
+            "top": 160,
+            "left": 57,
+            "bottom": 343,
+            "right": 239,
+            "width": 182,
+            "height": 183,
+            "defaultColor": 0,
+            "relative": false,
+            "disabled": false,
+            "invert": false
+          },
+          "image": {}
+        },
+        {
+          "type": "layer",
+          "visible": true,
+          "opacity": 1,
+          "blendingMode": "normal",
+          "name": "shadow",
+          "left": 68,
+          "right": 229,
+          "top": 334,
+          "bottom": 376,
+          "height": 42,
+          "width": 161,
+          "mask": {},
+          "image": {}
+        }
+      ]
+    },
+    {
+      "type": "layer",
+      "visible": true,
+      "opacity": 1,
+      "blendingMode": "normal",
+      "name": "top bar",
+      "left": 0,
+      "right": 512,
+      "top": 0,
+      "bottom": 167,
+      "height": 167,
+      "width": 512,
+      "mask": {},
+      "image": {}
+    },
+    {
+      "type": "layer",
+      "visible": true,
+      "opacity": 1,
+      "blendingMode": "normal",
+      "name": "background",
+      "left": 0,
+      "right": 512,
+      "top": 0,
+      "bottom": 512,
+      "height": 512,
+      "width": 512,
+      "mask": {},
+      "image": {}
+    }
+  ],
+  "document": {
+    "width": 512,
+    "height": 512,
+    "resources": { "layerComps": [], "guides": [], "slices": [] }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "type": "layer",
+  "visible": true,
+  "opacity": 1,
+  "blendingMode": "normal",
+  "name": "Lorem ipsum dolor sit amet,  consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ",
+  "left": 421,
+  "right": 1576,
+  "top": 1223,
+  "bottom": 1612,
+  "height": 389,
+  "width": 1155,
+  "mask": {},
+  "text": {
+    "value": "Lorem ipsum dolor sit amet, \rconsectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis ",
+    "font": {
+      "name": "﻿Barlow-Regular\u0000",
+      "sizes": [23],
+      "colors": [[95, 118, 97, 255]],
+      "alignment": ["center", "center"]
+    },
+    "left": 0,
+    "top": 0,
+    "right": 0,
+    "bottom": 0,
+    "transform": {
+      "xx": 2.0833333333333335,
+      "xy": 0,
+      "yx": 0,
+      "yy": 2.0833333333333335,
+      "tx": -16064.403645833334,
+      "ty": -16065.247395833334
+    }
+  },
+  "image": {}
+}

@@ -18,7 +18,6 @@ $(function () {
 
     // Reset file input
     $("#meme-input").val("");
-    console.log(file);
 
     // Validate this is image
     if (!isImage(fileType)) {

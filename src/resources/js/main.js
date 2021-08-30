@@ -200,11 +200,21 @@ console.log(
   })
 );
 
-function toFabricJson(layer, scale) {
+function toFabricJson(layer, scale, fx) {
   var arr = layer.export();
   if (arr.text) {
+    // font colors
+    let clr = arr.text.font.colors[0].reverse();
+    clr.shift();
+    // Nama Font
+    let font = arr.text.font.name.replace(/(?:\\[rn]|[\r\n]+)+|\u0000/g, " ");
+    // Ukuran Font
+    let size = Math.round((arr.text.font.sizes[0] * arr.text.transform.yy) * 100) * 0.01;
+    let height = Math.round((arr.text.font.sizes[0] * arr.text.transform.xx) * 100) * 0.01; // 64 
+    console.log(size);
+
     var dt = {
-      type: "textbox",
+      type: "text",
       version: "4.4.0",
       originX: "left",
       originY: "top",
@@ -212,7 +222,7 @@ function toFabricJson(layer, scale) {
       top: arr.top,
       width: arr.width,
       height: arr.height,
-      fill: "rgb(255, 255, 255)",
+      fill: `rgb(${clr.reverse().toString()})`,
       stroke: "#000000",
       strokeWidth: 1,
       strokeDashArray: null,
@@ -234,9 +244,9 @@ function toFabricJson(layer, scale) {
       skewX: 0,
       skewY: 0,
       text: arr.text.value.replace(/(?:\\[rn]|[\r\n]+)+|\u0003/g, "\n"),
-      fontSize: arr.text.font.sizes[0],
+      fontSize: size,
       fontWeight: "",
-      fontFamily: arr.text.font.name.trim(),
+      fontFamily: font.trim(),
       fontStyle: "",
       lineHeight: 1,
       underline: "",
@@ -259,8 +269,8 @@ function toFabricJson(layer, scale) {
     width: arr.width,
     height: arr.height,
     fill: "rgb(0,0,0)",
-    stroke: null,
-    strokeWidth: 0,
+    stroke: `rgb(0,0,0)`,
+    strokeWidth: fx.size,
     strokeDashArray: null,
     strokeLineCap: "butt",
     strokeDashOffset: 0,
@@ -337,13 +347,17 @@ async function convertPSD(file) {
   // console.log("PSD");
   // console.log(psd);
   var tree = psd.tree();
-  console.log(JSON.stringify(tree.export()));
+  // console.log(JSON.stringify(tree.export()));
+
+  // canvas size
   var abcd = tree.descendants();
   var w = tree.get("width");
   var h = tree.get("height");
   var sc = 1;
+
   // var sc = Math.min(1, 1000 / w);
   var dt = getFabricJson(w * sc, h * sc);
+  fx = new String;
   for (let i = 0; i < abcd.length; i++) {
     if (
       abcd[i].isGroup() ||
@@ -355,11 +369,28 @@ async function convertPSD(file) {
       dt.backgroundImage.src = abcd[i].get("image").toBase64(sc);
       break;
     } else {
-      dt.objects.push(toFabricJson(abcd[i], sc));
+      // get layer fx data (stroke, stroke size)
+      if (abcd[i].get("objectEffects") == undefined) {
+        fx.colour = null;
+        fx.size = 0;
+      } else {
+        node = abcd[i].get("objectEffects").data;
+        const clr = Object.values(node.FrFX['Clr ']);
+        console.log(clr);
+
+        clr.shift();
+        const sz = Object.values(node.FrFX['Sz  ']).pop();
+        fx.colour = clr.toString();
+        fx.size = sz;
+        console.log(fx.colour);
+
+      }
+      dt.objects.push(toFabricJson(abcd[i], sc, fx));
     }
   }
+  // console.log(fx);
   dt.objects = dt.objects.reverse();
   // console.log("DATA");
-  // console.log(dt);
+  console.log(dt);
   return dt;
 }

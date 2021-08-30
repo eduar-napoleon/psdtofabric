@@ -1,6 +1,6 @@
 // Handle custom fonts
 function loadFont(font) {
-    const customFonts = ['Arial Black', 'Comic Sans Ms', 'Impact', 'Trebuchet MS', 'Bahij Myriad Arabic Bold', 'Hacen Liner XXL']
+    const customFonts = ['Arial Black', 'Comic Sans Ms', 'Impact', 'Trebuchet MS', 'Bahij Myriad Arabic Bold', 'Hacen Liner XXL', 'Harrington', 'NelphimItalic-Italic', 'HighSummit']
     var text = canvas.getActiveObject()
     if (customFonts.includes(font)) {
         var myfont = new FontFaceObserver(font)
@@ -153,6 +153,7 @@ $('#font-style .btn').on('click', function () {
         $(this).attr('data', '')
     }
     $(this).trigger('change-value')
+
 })
 
 // Update style of text align buttons

@@ -145,6 +145,7 @@ $('.edit-btn').on('update-status', function () {
 
 //  Toggle font-style buttons
 $('#font-style .btn').on('click', function () {
+
     if ($(this).attr('data') == '') {
         $(this).addClass('active')
         $(this).attr('data', $(this).attr('value'))

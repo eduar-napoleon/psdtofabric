@@ -202,6 +202,7 @@ console.log(
 
 function toFabricJson(layer, scale, fx) {
   var arr = layer.export();
+
   if (arr.text) {
     // font colors
     let clr = arr.text.font.colors[0].reverse();
@@ -210,11 +211,12 @@ function toFabricJson(layer, scale, fx) {
     let font = arr.text.font.name.replace(/(?:\\[rn]|[\r\n]+)+|\u0000/g, " ");
     // Ukuran Font
     let size = Math.round((arr.text.font.sizes[0] * arr.text.transform.yy) * 100) * 0.01;
-    let height = Math.round((arr.text.font.sizes[0] * arr.text.transform.xx) * 100) * 0.01; // 64 
-    console.log(size);
+    let height = Math.round((arr.text.font.sizes[0] * arr.text.transform.xx) * 100) * 0.01;
+    console.log(font.trim());
+
 
     var dt = {
-      type: "text",
+      type: "textbox",
       version: "4.4.0",
       originX: "left",
       originY: "top",
@@ -354,7 +356,6 @@ async function convertPSD(file) {
   var w = tree.get("width");
   var h = tree.get("height");
   var sc = 1;
-
   // var sc = Math.min(1, 1000 / w);
   var dt = getFabricJson(w * sc, h * sc);
   fx = new String;
@@ -365,8 +366,16 @@ async function convertPSD(file) {
       abcd[i].get("width") < 1
     )
       continue;
-    if (abcd[i].get("width") >= w && abcd[i].get("height") >= h) {
+
+    // --------- GET GROUP CHILDREN-------------
+    // let n = abcd[0]._children.length;
+    // let b = abcd[0]._children[n - 1]._children.length;
+    // console.log(abcd[0]._children[n - 1]);
+    // console.log(abcd[i].get("name"));
+
+    if (abcd[i].get("name") == "Background") {
       dt.backgroundImage.src = abcd[i].get("image").toBase64(sc);
+      // console.log(abcd[i].export().visible.length);
       break;
     } else {
       // get layer fx data (stroke, stroke size)
@@ -383,12 +392,10 @@ async function convertPSD(file) {
         fx.colour = clr.toString();
         fx.size = sz;
         console.log(fx.colour);
-
       }
       dt.objects.push(toFabricJson(abcd[i], sc, fx));
     }
   }
-  // console.log(fx);
   dt.objects = dt.objects.reverse();
   // console.log("DATA");
   console.log(dt);

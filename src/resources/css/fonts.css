@@ -1,3 +1,4 @@
+/* A */
 @font-face {
   font-family: "Arial Black";
   font-style: normal;
@@ -5,20 +6,29 @@
   src: url("../fonts/ariblk.ttf") format("truetype");
 }
 
+/* B */
 @font-face {
-  font-family: "Trebuchet MS";
+  font-family: "Bahij Myriad Arabic Bold";
   font-style: normal;
   font-weight: normal;
-  src: url("../fonts/trebuc.woff") format("woff");
+  src: url("../fonts/Bahij-Myriad-Arabic-Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Trebuchet MS Italic";
+  font-family: "Barlow-Regular";
   font-style: normal;
   font-weight: normal;
-  src: url("../fonts/Trebuchet-MS-Italic.woff") format("woff");
+  src: url("../fonts/Barlow-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Butler";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Butler_Regular.otf") format("truetype");
+}
+
+/* C */
 @font-face {
   font-family: "Comic Sans Ms";
   font-style: normal;
@@ -26,19 +36,7 @@
   src: url("../fonts/Comic-Sans-MS.TTF") format("truetype");
 }
 
-@font-face {
-  font-family: "Impact";
-  font-style: normal;
-  font-weight: normal;
-  src: url("../fonts/impact.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Bahij Myriad Arabic Bold";
-  font-style: normal;
-  font-weight: normal;
-  src: url("../fonts/Bahij-Myriad-Arabic-Bold.ttf") format("truetype");
-}
+/* H */
 @font-face {
   font-family: "Hacen Liner XXL";
   font-style: normal;
@@ -54,15 +52,39 @@
 }
 
 @font-face {
+  font-family: "HighSummit";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/High\ Summit.ttf") format("truetype");
+}
+
+/* I */
+@font-face {
+  font-family: "Impact";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/impact.ttf") format("truetype");
+}
+
+/* N */
+@font-face {
   font-family: "NelphimItalic-Italic";
   font-style: normal;
   font-weight: normal;
   src: url("../fonts/nelphim-italic.otf") format("truetype");
 }
 
+/* T */
 @font-face {
-  font-family: "HighSummit";
+  font-family: "Trebuchet MS";
   font-style: normal;
   font-weight: normal;
-  src: url("../fonts/High\ Summit.ttf") format("truetype");
+  src: url("../fonts/trebuc.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Trebuchet MS Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Trebuchet-MS-Italic.woff") format("woff");
 }
